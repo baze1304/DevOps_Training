@@ -3,6 +3,8 @@ import hudson.model.*
 import java.net.URL
 
 node{
+	cleanWs()
+	
 	stage('Git Checkout'){
 	    git 'https://github.com/baze1304/DevOpsClassCodes.git'
 	}
