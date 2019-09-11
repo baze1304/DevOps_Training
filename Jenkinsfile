@@ -27,8 +27,8 @@ node{
 	}
 	stage('Coverage'){
 		        	withMaven(maven:'mymaven'){
-				//sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
-				sh 'mvn cobertura:cobertura'					
+				sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
+				//sh 'mvn cobertura:cobertura'					
 			}
 		}
 	
