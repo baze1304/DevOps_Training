@@ -2,7 +2,6 @@
 import hudson.model.*
 import java.net.URL
 
-
 node{
 	stage('Git Checkout'){
 	    git 'https://github.com/baze1304/DevOpsClassCodes.git'
@@ -33,7 +32,7 @@ node{
 			}
 		} finally{
 			cobertura coberturaReportFile: 'target/coverage.xml'
-		}
+		}}
 	
 	stage('Package'){
 		withMaven(maven:'mymaven'){
