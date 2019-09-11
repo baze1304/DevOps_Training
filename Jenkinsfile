@@ -31,7 +31,7 @@ node{
 				sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
 			}
 		} finally{
-			cobertura coberturaReportFile: 'target/coverage.xml'
+			cobertura coberturaReportFile: 'target/site/coverage.xml'
 		}}
 	
 	stage('Package'){
