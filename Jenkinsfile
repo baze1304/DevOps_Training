@@ -26,13 +26,10 @@ node{
 		}
 	}
 	stage('Coverage'){
-		try {
-			withMaven(maven:'mymaven'){
+		        	withMaven(maven:'mymaven'){
 				sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
 			}
-		} finally{
-			cobertura coberturaReportFile: '**/target/site/cobertura.xml'
-		}}
+		}
 	
 	stage('Package'){
 		withMaven(maven:'mymaven'){
