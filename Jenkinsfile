@@ -9,14 +9,13 @@ node{
 	    git 'https://github.com/baze1304/DevOpsClassCodes.git'
 	}
 	stage('Compile'){
-	    
-		sh '${MAVEN_HOME}/mvn compile'
-	    
+		sh '${MAVEN_HOME}/mvn compile'	    
 	}
 	
 	stage('Package'){
-		
 	       sh '${MAVEN_HOME}/mvn package'
-	    
+	}
+	stage('Display'){
+		sh 'pwd'
 	}
 }
