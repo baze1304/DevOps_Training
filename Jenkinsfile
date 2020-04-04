@@ -10,13 +10,13 @@ node{
 	}
 	stage('Compile'){
 	    
-		sh '${MAVEN_OPTS}/mvn compile'
+		sh '${MAVEN_HOME}/mvn compile'
 	    
 	}
 	
 	stage('Package'){
 		
-	       sh '${MAVEN_OPTS}/mvn package'
+	       sh '${MAVEN_HOME}/mvn package'
 	    
 	}
 }
