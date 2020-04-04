@@ -9,34 +9,14 @@ node{
 	    git 'https://github.com/baze1304/DevOpsClassCodes.git'
 	}
 	stage('Compile'){
-	    withMaven(maven:'mymaven'){
-	        sh 'mvn compile'
-	    }
+	    
+		sh '${MAVEN_OPTS}/mvn compile'
+	    
 	}
-	stage('Review'){
-	    withMaven(maven:'mymaven'){
-	        sh 'mvn pmd:pmd'
-	    }
-	}	
-	stage('Test'){
-		try {
-			withMaven(maven:'mymaven'){
-				sh 'mvn test'
-			}
-		} finally{
-			junit 'target/surefire-reports/*.xml'
-		}
-	}
-	stage('Coverage'){
-		        	withMaven(maven:'mymaven'){
-				sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
-				//sh 'mvn cobertura:cobertura'					
-			}
-		}
 	
 	stage('Package'){
-		withMaven(maven:'mymaven'){
-	        sh 'mvn package'
-	    }
+		
+	       sh '${MAVEN_OPTS}/mvn package'
+	    
 	}
 }
