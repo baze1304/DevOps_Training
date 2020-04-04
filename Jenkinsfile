@@ -19,7 +19,7 @@ node{
 	}
 	stage('ssh'){
 		sshagent (credentials: ['89ccc335-db06-4b8b-9b29-fc4932d4f8f3']) {
-    		sh 'scp /var/lib/jenkins/workspace/parameter_pipeline/target/addressbook.war devopsuser@docker-2:/home/devopsuser'
+    		sh 'ssh devopsuser@docker-2:ls -lrt'
   }
 	}
 }
